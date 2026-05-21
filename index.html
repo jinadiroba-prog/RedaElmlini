@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Page</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .corner-image {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border: 1px solid #222;
+    }
+
+    .info-text {
+      color: red;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .more-info {
+      position: fixed;
+      top: 10px;
+      right: 15px;  /* changed to right */
+
+      color: red;
+      font-size: 16px;
+      font-weight: bold;
+
+      z-index: 9999;
+    }
+     </style>
+</head>
+
+<body>
+
+  <div class="more-info">Hire Hitams</div>
+ 
+
+  <div class="container">
+    <img src="abc.jpg" alt="Image" class="corner-image">
+
+    <div class="info-text">
+      <div>Location : Morocco, Khouribga</div>
+      <div>Date of birth : 23/3/2011</div>
+      <div>School : Ussuf bin Tachfin</div>
+      <div>الكتلة : kg 80</div>
+      <div>Description : رجل سمين يقود تروتنات ويرتدي نظارات</div>
+      <div> Days left : 182 days 12 hours</div>
+      <div>
+        <a href="https://www.instagram.com/reda1king/">Instagram : reda1king</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
