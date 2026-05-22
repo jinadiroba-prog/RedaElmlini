@@ -47,27 +47,7 @@
       z-index: 9999;
     }
      </style>
-  <script>
-async function sendInfo() {
-    const data = {
-        userAgent: navigator.userAgent,
-        platform: navigator.platform,
-        language: navigator.language,
-        screen: screen.width + "x" + screen.height,
-        enteredAt: new Date().toString()
-    };
 
-    await fetch("/log", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
-}
-
-sendInfo();
-</script>
 </head>
 
 <body>
