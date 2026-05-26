@@ -53,7 +53,7 @@
   <script>
     function checkBrowser() {
 
-      // Skip check if user already accepted
+      // Skip redirect if user clicked "I Don't Care"
       if (localStorage.getItem("accepted") === "true") {
         return;
       }
@@ -70,6 +70,7 @@
 
     window.onload = checkBrowser;
   </script>
+
 </head>
 
 <body>
