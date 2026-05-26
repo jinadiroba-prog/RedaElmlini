@@ -38,48 +38,46 @@
     .more-info {
       position: fixed;
       top: 10px;
-      right: 15px;  /* changed to right */
-
+      right: 15px;
       color: red;
       font-size: 16px;
       font-weight: bold;
-
       z-index: 9999;
     }
-     </style>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tor Browser Check</title>
-    <script>
-        function checkBrowser() {
-            const ua = navigator.userAgent;
 
-            // Detect Tor Browser
-            const isTor = ua.includes("TorBrowser");
+    a {
+      color: red;
+    }
+  </style>
 
-            if (!isTor) {
-                // Redirect if NOT using Tor
-                window.location.href = "s.html";
-            }
-        }
+  <script>
+    function checkBrowser() {
 
-        window.onload = checkBrowser;
-    </script>
-</head>
-<body>
-    <h1>Welcome Tor User</h1>
-</body>
-</html>
+      // Skip check if user already accepted
+      if (localStorage.getItem("accepted") === "true") {
+        return;
+      }
 
+      const ua = navigator.userAgent;
+
+      // Detect Tor Browser
+      const isTor = ua.includes("TorBrowser");
+
+      if (!isTor) {
+        window.location.href = "s.html";
+      }
+    }
+
+    window.onload = checkBrowser;
+  </script>
 </head>
 
 <body>
 
   <div class="more-info">Hire a Hitman</div>
- 
 
   <div class="container">
+
     <img src="abc.jpg" alt="Image" class="corner-image">
 
     <div class="info-text">
@@ -88,11 +86,13 @@
       <div>School : Ussuf bin Tachfin</div>
       <div>weight : kg 80</div>
       <div>Price : 499.99$</div>
-      <div> Days left : 180 days 2 hours</div>
+      <div>Days left : 180 days 2 hours</div>
+
       <div>
         <a href="https://www.instagram.com/reda1king/">media</a>
       </div>
     </div>
+
   </div>
 
 </body>
