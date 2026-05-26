@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tor Browser Required</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg,#0f0f0f,#1c1c1c,#2b0033);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            color:white;
+        }
+
+        .container{
+            text-align:center;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border:1px solid rgba(255,255,255,0.1);
+            padding:50px;
+            border-radius:20px;
+            width:90%;
+            max-width:600px;
+            box-shadow:0 0 25px rgba(128,0,255,0.4);
+            animation: fadeIn 1s ease;
+        }
+
+        h1{
+            font-size:3rem;
+            margin-bottom:20px;
+            color:#bb86fc;
+        }
+
+        p{
+            font-size:1.1rem;
+            line-height:1.7;
+            color:#d6d6d6;
+            margin-bottom:30px;
+        }
+
+        .buttons{
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            display:inline-block;
+            text-decoration:none;
+            padding:14px 28px;
+            border-radius:10px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .download{
+            background:#bb86fc;
+            color:black;
+        }
+
+        .download:hover{
+            background:white;
+            transform:scale(1.05);
+        }
+
+        .ignore{
+            background:transparent;
+            border:2px solid #bb86fc;
+            color:#bb86fc;
+        }
+
+        .ignore:hover{
+            background:#bb86fc;
+            color:black;
+            transform:scale(1.05);
+        }
+
+        .glow{
+            position:absolute;
+            width:400px;
+            height:400px;
+            background:#7b2cff;
+            filter:blur(140px);
+            opacity:0.25;
+            z-index:-1;
+        }
+
+        .g1{
+            top:-100px;
+            left:-100px;
+        }
+
+        .g2{
+            bottom:-100px;
+            right:-100px;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(20px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        footer{
+            margin-top:30px;
+            font-size:0.85rem;
+            color:#888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+
+    <div class="container">
+        <h1>Access Restricted</h1>
+
+        <p>
+            This website requires the use of the
+            Tor Browser for privacy and security reasons.
+            Your current browser is not supported.
+        </p>
+
+        <div class="buttons">
+            <a class="btn download"
+               href="https://www.torproject.org/download/"
+               target="_blank">
+               Download Tor Browser
+            </a>
+
+            <button class="btn ignore" onclick="ignoreWarning()">
+                I Don't Care
+            </button>
+        </div>
+
+        <footer>
+            Secure access only • Privacy Protected
+        </footer>
+    </div>
+
+    <script>
+        function ignoreWarning() {
+            // Redirect anyway
+            window.location.href = "index.html";
+
+            // Or replace with another page:
+            // window.location.href = "home.html";
+        }
+    </script>
+
+</body>
+</html>
