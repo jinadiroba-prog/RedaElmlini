@@ -157,13 +157,16 @@
     </div>
 
     <script>
-        function ignoreWarning() {
-            // Redirect anyway
-            window.location.href = "index.html";
 
-            // Or replace with another page:
-            // window.location.href = "home.html";
-        }
+    function ignoreWarning() {
+
+        // Save user choice
+        localStorage.setItem("accepted", "true");
+
+        // Go back to main page
+        window.location.href = "index.html";
+    }
+
     </script>
 
 </body>
