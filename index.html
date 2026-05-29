@@ -50,26 +50,54 @@
     }
   </style>
 
-  <script>
-    function checkBrowser() {
+ <script>
+  function checkBrowser() {
 
-      // Skip redirect if user clicked "I Don't Care"
-      if (localStorage.getItem("accepted") === "true") {
-        return;
-      }
-
-      const ua = navigator.userAgent;
-
-      // Detect Tor Browser
-      const isTor = ua.includes("TorBrowser");
-
-      if (!isTor) {
-        window.location.href = "s.html";
-      }
+    // Skip redirect if user clicked "I Don't Care"
+    if (localStorage.getItem("accepted") === "true") {
+      return;
     }
 
-    window.onload = checkBrowser;
-  </script>
+    const ua = navigator.userAgent;
+
+    // Detect Tor Browser
+    const isTor = ua.includes("TorBrowser");
+
+    if (!isTor) {
+      window.location.href = "s.html";
+    }
+  }
+
+  function startCountdown() {
+
+    // 180 days + 2 hours from now
+    const targetDate = new Date().getTime() + 
+      (180 * 24 * 60 * 60 * 1000) + 
+      (2 * 60 * 60 * 1000);
+
+    setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
+
+      document.getElementById("countdown").innerHTML =
+        "Days left : " + days + " days " + hours + " hours";
+
+    }, 1000);
+  }
+
+  window.onload = function () {
+    checkBrowser();
+    startCountdown();
+  };
+</script>
 
 </head>
 
@@ -87,7 +115,7 @@
       <div>School : Ussuf bin Tachfin</div>
       <div>weight : kg 80</div>
       <div>Price : 499.99$</div>
-      <div>Days left : 180 days 2 hours</div>
+     <div id="countdown">Days left : Loading...</div>
 
       <div>
         <a href="https://www.instagram.com/reda1king/">media</a>
